@@ -1,6 +1,6 @@
 import { readdirSync } from 'fs';
 import path from 'path';
-import { db } from './conn.database';
+import { db } from './conn';
 
 const migrationsPath = path.join(__dirname, './migrations');
 
