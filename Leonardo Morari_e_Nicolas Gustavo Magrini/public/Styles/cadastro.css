@@ -130,11 +130,11 @@ input:focus{
   display: none;
 }
 
-.btn-cadastro{
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 15px;
-  text-decoration: underline;
-}
-  
+
+  .btn-tela-cadastro{
+    background-color: transparent;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: underline;
+  }
