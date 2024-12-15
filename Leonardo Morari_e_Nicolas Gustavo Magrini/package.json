@@ -1,0 +1,26 @@
+{
+  "name": "leonardo-morari_e_nicolas-gustavo-magrini",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migration:up": "ts-node ./src/db/migrator.database.ts up",
+    "migration:down": "ts-node ./src/db/migrator.database.ts down"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.7.0",
+    "express": "^4.21.2",
+    "kysely": "^0.27.5"
+  }
+}
