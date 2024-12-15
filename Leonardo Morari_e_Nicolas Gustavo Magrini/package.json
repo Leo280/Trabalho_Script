@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "migration:up": "ts-node ./src/db/migrator.database.ts up",
-    "migration:down": "ts-node ./src/db/migrator.database.ts down"
+    "migration:down": "ts-node ./src/db/migrator.database.ts down",
+    "dev": "ts-node ./src/index.ts"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,7 @@
   },
   "dependencies": {
     "better-sqlite3": "^11.7.0",
+    "ejs": "^3.1.10",
     "express": "^4.21.2",
     "kysely": "^0.27.5"
   }
