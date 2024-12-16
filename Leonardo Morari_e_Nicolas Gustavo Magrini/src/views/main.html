@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../public/Styles/form.css">
   <link rel="stylesheet" href="../public/Styles/info-modal.css">
   <link rel="stylesheet" href="../public/Styles/sucess-modal.css">
+  <link rel="stylesheet" href="../public/Styles/cadastrarProduto.css">
   <title>Drinks Perfeitos</title>
 </head>
 
@@ -42,12 +43,18 @@
   <!--Sessão dos cartões - Exibição de alguns dos produtos-->
 
   <section class="container-2">
-    <div class="title">
-      <p>Bebidas que Encantam</p>
-      <p>Alguns de nossos <span>Drinks</span></p>
+    <div class="container-title">
+      <div class="title">
+        <p>Bebidas que Encantam</p>
+        <p>Alguns de nossos <span>Drinks</span></p>
+      </div>
     </div>
+    <div class="container-cadastro">
+      <button class="btn-cadastrar-produto" id="openModalcadastroProduto"><i class="fa-solid fa-plus fa-2xl" style="color: #fcfcfc;"></i></button>
+      <p>Cadastrar Bebidas</p>
+    </div>
+    
     <div class="card-container">
-
       <div class="cards">
         <div class="cards-header">
           <img src="../public/Img/drink-1.avif" alt="Lemon drink" title="Lemon drink">
@@ -83,7 +90,6 @@
           <button id="openRainbowModalBtn">Click Aqui</button>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -120,6 +126,24 @@
         <img src="../public/Img/check.png" alt="check" title="check">
         <h2>Formulário enviado com sucesso!</h2>
       </div>
+    </div>
+  </div>
+
+  <!--Formulário para Cadastrar Produto-->
+
+  <div id="modalCadastrarProduto" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Cadastrar Drink</h2>
+      <form id="CadastroProdutoForm">
+        <label for="imagem">Imagem</label>
+        <input class="input-file" type="file" id="image" name="image" required>
+        <label for="name">Nome:</label>
+        <input class="nome" type="text" id="name" name="name" required>
+        <label for="descricao">Descrição:</label>
+        <textarea class="textarea" name="descricao" id="descricao"></textarea>
+        <button type="submit" class="btn-enviar">Cadastrar</button>
+      </form>
     </div>
   </div>
 
@@ -162,6 +186,7 @@
 
   <script src="../public/js/form.js"></script>
   <script src="../public/js/modal-info.js"></script>
+  <script src="../public/js/cadastroProduto.js"></script>
 </body>
 
 </html>
