@@ -5,6 +5,7 @@ export async function up(db: Kysely<any>) {
     .createTable('bookings')
     .ifNotExists()
     .addColumn('id', 'text', (col) => col.primaryKey())
+    .addColumn('name', 'text', (col) => col.notNull())
     .addColumn('date', 'text', (col) => col.notNull())
     .addColumn('cpf', 'text', (col) => col.notNull())
     .addColumn('time', 'text', (col) => col.notNull())
