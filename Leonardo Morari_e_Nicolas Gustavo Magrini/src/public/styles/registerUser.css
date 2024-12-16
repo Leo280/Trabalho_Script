@@ -1,36 +1,37 @@
-/* Estilização da tela de Login*/
-
-
-body{
+body {
   background-color: #000;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
-
-.container{
+.container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
   height: 100vh;
   width: 100vw;
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.img-container{
+.img-container {
   height: 500px;
   width: 510px;
   border-radius: 10px 0 0 10px;
   z-index: 1;
 }
 
-.img-container img{
+.img-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 10px 0 0 10px;
- 
 }
 
-.container-form{
+.container-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,49 +41,47 @@ body{
   padding: 20px;
   height: 500px;
   width: 500px;
-  border-radius: 0 10px 10px 0 ;
+  border-radius: 0 10px 10px 0;
   background-color: #fff;
-  z-index: 0;
+  position: relative;
+  z-index: 2;
 }
 
-.container-form p{
+.container-form p {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 15px;
 }
 
-.container-form span{
-  background-color: #000;
-  color: #fff;
+.container-form span {
+  color: #000;
   padding: 2px;
   border-radius: 5px;
   font-size: 22px;
 }
 
-.input-group{
+.input-group {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 30px;
+  gap: 20px;
   margin-top: 20px;
-  
 }
 
-.input-group input{
+.input-group input {
   width: 300px;
   height: 35px;
   border-radius: 24px;
   border: 1.8px solid #000;
   padding: 8px;
-
 }
 
-input:focus{
+input:focus {
   outline: none;
 }
 
-.input-group .btn-logar{
+.input-group .btn-cadastrar {
   width: 300px;
   height: 35px;
   border-radius: 24px;
@@ -95,15 +94,42 @@ input:focus{
   transition: 0.5s;
 }
 
-.btn-logar:hover{
+.btn-cadastrar:hover {
   background-color: #fff;
   color: #000;
   transition: 0.5s;
   border: 1px solid #000;
 }
 
-.cadastro{
-  color:#000;
+.cadastro {
+  color: #000;
+}
+
+.error-message,
+.success-message {
+  color: red;
+  margin-top: 10px;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  display: none;
+  z-index: 3;
+}
+
+.success-message {
+  color: green;
+}
+
+.btn-logar {
+  background-color: transparent;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-top: 10px;
 }
 
 @media (max-width: 768px) {
@@ -120,21 +146,4 @@ input:focus{
     flex: 1 1 100%;
     margin-left: 20px;
   }
-
-  
 }
-  
-.error-message {
-  color: red;
-  margin-top: 10px;
-  display: none;
-}
-
-.btn-cadastro{
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 15px;
-  text-decoration: underline;
-}
-  
