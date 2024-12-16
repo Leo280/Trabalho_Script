@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Leonardo Morari e Nicolas Gustavo" />
+    <link rel="stylesheet" href="/styles/generic.css" />
+    <link rel="stylesheet" href="/styles/registerUser.css" />
+    <title>Cadastro</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="img-container">
+        <img src="/img/Drink-cadastro.png" alt="Ilustração de um drink em um copo com gelo" role="img" />
+      </div>
+      <div class="container-form">
+        <p>
+          <i class="fa-solid fa-martini-glass-citrus fa-xl" style="color: #000" aria-hidden="true"></i>
+          <span>Realize o seu Cadastro</span>
+        </p>
+        <form class="input-group" id="cadastroForm" aria-labelledby="form-title" novalidate>
+          <label for="name">Nome</label>
+          <input type="text" id="name" placeholder="Digite seu nome" required aria-required="true" />
+          <label for="email">E-mail</label>
+          <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required aria-required="true" />
+          <label for="password">Senha</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Digite uma senha"
+            required
+            aria-required="true"
+          />
+          <button type="submit" class="btn-cadastrar" aria-label="Cadastrar-se no sistema">Cadastrar-se</button>
+          <button class="btn-logar" aria-label="Ir para tela de login" onclick="redirectLogin()">Realizar Login</button>
+          <p id="success" class="success-message" aria-live="polite" role="alert"></p>
+          <p id="error" class="error-message" aria-live="polite" role="alert"></p>
+        </form>
+      </div>
+    </div>
+
+    <script src="/js/registerUser.js"></script>
+  </body>
+</html>
