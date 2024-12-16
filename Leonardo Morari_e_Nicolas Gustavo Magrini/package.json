@@ -4,9 +4,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "migration:up": "ts-node ./src/db/migrator.database.ts up",
-    "migration:down": "ts-node ./src/db/migrator.database.ts down",
-    "dev": "ts-node ./src/index.ts"
+    "dev": "ts-node ./src/index.ts",
+    "migration:create": "ts-node ./src/utils/db/create-migration.ts",
+    "migration:up": "ts-node ./src/utils/db/migrator.ts up",
+    "migration:down": "ts-node ./src/utils/db/migrator.ts down"
   },
   "keywords": [],
   "author": "",

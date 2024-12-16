@@ -1,5 +1,4 @@
 import { Kysely, sql } from 'kysely';
-import { uptime } from 'process';
 
 export async function up(db: Kysely<any>) {
   await db.schema
