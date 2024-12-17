@@ -18,12 +18,16 @@
           <i class="fa-solid fa-martini-glass-citrus fa-xl" style="color: #000" aria-hidden="true"></i>
           <span>Realize o seu Cadastro</span>
         </p>
-        <form class="input-group" id="cadastroForm" aria-labelledby="form-title" novalidate>
-          <label for="name">Nome</label>
-          <input type="text" id="name" placeholder="Digite seu nome" required aria-required="true" />
-          <label for="email">E-mail</label>
+        <form
+          class="input-group"
+          id="registerForm"
+          aria-describedby="form-title"
+          action="/users/register"
+          method="post"
+          onsubmit="validateAndSubmit(event)"
+        >
+          <input type="text" id="name" name="name" placeholder="Digite seu nome" required aria-required="true" />
           <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required aria-required="true" />
-          <label for="password">Senha</label>
           <input
             type="password"
             id="password"
@@ -33,13 +37,14 @@
             aria-required="true"
           />
           <button type="submit" class="btn-cadastrar" aria-label="Cadastrar-se no sistema">Cadastrar-se</button>
-          <button class="btn-logar" aria-label="Ir para tela de login" onclick="redirectLogin()">Realizar Login</button>
-          <p id="success" class="success-message" aria-live="polite" role="alert"></p>
-          <p id="error" class="error-message" aria-live="polite" role="alert"></p>
+          <button type="button" class="btn-logar" aria-label="Ir para tela de login" onclick="redirectLogin()">
+            Realizar Login
+          </button>
+          <div id="error" class="error-message" aria-live="polite" role="alert"></div>
         </form>
       </div>
     </div>
-
+    <%- include('partials/footer') %>
     <script src="/js/registerUser.js"></script>
   </body>
 </html>

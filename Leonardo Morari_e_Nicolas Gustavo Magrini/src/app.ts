@@ -1,8 +1,18 @@
 import express from 'express';
 import path from 'path';
 import { mainRouter } from './routes/main-routes';
+import session from 'express-session';
 
 const app = express();
+
+app.use(
+  session({
+    secret: 'corinthians',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false },
+  })
+);
 
 app.use(
   express.urlencoded({

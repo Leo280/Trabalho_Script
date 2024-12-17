@@ -3,21 +3,30 @@ import { CreateUserDto, LoginUserDto, UserResponseDto } from '../../models/dtos/
 import { KyselyUserRepository } from '../../repositories/implementations/user-kysely-repository';
 import { UserRepository } from '../../repositories/user-repository';
 import { UserService } from '../user-service';
+import { UserModel } from '../../models/user-model';
 
 export class UserServiceImpl implements UserService {
+  private repository: UserRepository;
+
+  constructor() {
+    this.repository = new KyselyUserRepository();
+  }
+
   async create(payload: CreateUserDto) {
     const { name, email, password } = payload;
-    const repository: UserRepository = new KyselyUserRepository();
+    const user = await this.repository.findUserByEmail(email);
+    if (user) {
+      throw new Error('Usuário já existente');
+    }
     const hashPassword = await bcrypt.hash(password, 10);
 
-    await repository.create({ name, email, password: hashPassword });
+    await this.repository.create({ name, email, password: hashPassword });
   }
 
   async login(payload: LoginUserDto): Promise<UserResponseDto | null> {
     const { email, password } = payload;
-    const repository: UserRepository = new KyselyUserRepository();
 
-    const userDB = await repository.findUserByEmail(email);
+    const userDB = await this.repository.findUserByEmail(email);
 
     if (!userDB) {
       throw new Error('Usuário e/ou senha incorretos');
@@ -30,8 +39,18 @@ export class UserServiceImpl implements UserService {
       id: userDB.id,
       name: userDB.name,
       email: userDB.email,
+      role: userDB.role,
     };
 
     return output;
+  }
+
+  async findByEmail(email: String): Promise<UserModel | null> {
+    const user = await this.repository.findUserByEmail(email);
+
+    if (!user) {
+      return null;
+    }
+    return user;
   }
 }

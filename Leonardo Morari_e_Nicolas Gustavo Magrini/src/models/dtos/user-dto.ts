@@ -13,4 +13,5 @@ export type UserResponseDto = {
   id: string;
   name: string;
   email: string;
+  role: 'ADMIN' | 'USER';
 };

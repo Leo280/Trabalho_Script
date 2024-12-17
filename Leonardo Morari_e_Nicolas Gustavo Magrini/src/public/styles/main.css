@@ -1,100 +1,91 @@
 /* Estilização da pagina Principal do site*/
 
-
-body{
+body {
   background-color: #000;
 }
 
-header{
+header {
   display: flex;
   align-items: center;
   background-color: #fff;
   justify-content: end;
   gap: 10px;
   padding: 10px;
-  
 }
 
-.msg-logout{
-font-size: 20px;
+.msg-logout {
+  font-size: 20px;
 }
 
-.btn-logout{
+.btn-logout {
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
-.container-1{
+.container-1 {
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 100vh;
   width: 100vw;
   background-color: #fff;
-
 }
 
-.principal{
+.principal {
   display: block;
   font-size: 55px;
   width: 13ch;
   font-weight: 700;
-  border-right: 5px solid #000000; 
-  white-space: nowrap; 
-  overflow: hidden; 
-  animation: mark .5s step-end infinite, write 6s steps(13, end);
-  
+  border-right: 5px solid #000000;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: mark 0.5s step-end infinite, write 6s steps(13, end);
 }
 
-@keyframes mark{
-  50%{
+@keyframes mark {
+  50% {
     border-right-color: transparent;
   }
-
 }
 
-@keyframes write{
-  0%{
+@keyframes write {
+  0% {
     width: 0;
   }
 
-  20%{
+  20% {
     width: 13ch;
   }
 
-  70%{
+  70% {
     width: 13ch;
   }
 
-  85%{
+  85% {
     width: 13ch;
   }
-
-
 }
 
-
-p{
+p {
   font-size: 30px;
   font-weight: 400;
-  
 }
 
-.principal span{
+.principal span {
   color: #fff;
   background-color: #000;
   padding: 0px 5px 0px 5px;
   border-radius: 5px;
 }
 
-.text-container{
+.text-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 10px;
 }
 
-.btn-registra{
+.btn-registra {
   padding: 10px;
   border-radius: 24px;
   border: 1px solid #000;
@@ -105,24 +96,19 @@ p{
   cursor: pointer;
   transition: 0.5s;
   position: relative;
-  
- 
 }
 
-.btn-registra:hover{
+.btn-registra:hover {
   background-color: #000;
   color: #fff;
   transition: 0.5s;
 }
 
-
-
-.img-container img{
+.img-container img {
   height: 50vh;
-  
 }
 
-.container-2{
+.container-2 {
   display: flex;
   flex-direction: column;
   height: 70vh;
@@ -130,14 +116,14 @@ p{
   background-color: #000;
 }
 
-.container-cadastro{
+.container-cadastro {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-left: 15px;
 }
 
-.container-cadastro p{
+.container-cadastro p {
   color: #fff;
   font-size: 16px;
   animation: appear 1ms ease-in-out;
@@ -145,7 +131,7 @@ p{
   animation-range: cover 0% cover 40%;
 }
 
-.btn-cadastrar-produto{
+.btn-cadastrar-produto {
   background-color: #000;
   border: 2px solid #fff;
   border-radius: 100%;
@@ -155,13 +141,13 @@ p{
   animation-range: cover 0% cover 40%;
 }
 
-.title{
+.title {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.title p{
+.title p {
   color: #fff;
   margin-top: 15px;
   font-weight: 400;
@@ -170,24 +156,24 @@ p{
   animation-range: cover 0% cover 30%;
 }
 
-.title span{
+.title span {
   color: #000;
   background-color: #fff;
   padding: 6px;
   font-weight: 700;
   border-radius: 5px;
 }
-.card-container{
+
+.card-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   align-items: center;
   grid-row-gap: 10px;
   margin-top: 50px;
-
 }
 
-.cards{
+.cards {
   display: flex;
   flex-direction: column;
   background: linear-gradient(to bottom, #ffffff, #f9f9f9);
@@ -200,49 +186,46 @@ p{
   transition: transform 0.3s ease;
 }
 
-.cards:hover{
+.cards:hover {
   transform: scale(1.05);
 }
 
-
-@keyframes appear{
-  from{
+@keyframes appear {
+  from {
     opacity: 0;
   }
 
-  to{
+  to {
     opacity: 1;
   }
 }
 
-
-.cards-header{
+.cards-header {
   width: 300px;
   height: 270px;
 }
 
-.cards-header img{
+.cards-header img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 5px 5px 0 0;
-  
 }
 
-.cards-body p{
+.cards-body p {
   font-size: 22px;
   font-weight: 600;
   text-align: center;
 }
 
-.card-btn{
+.card-btn {
   display: flex;
   justify-content: center;
   margin-bottom: 15px;
   margin-top: 10px;
 }
 
-.card-btn button{
+.card-btn button {
   background: #fff;
   border-radius: 20px;
   padding: 10px 20px;
@@ -251,7 +234,7 @@ p{
   cursor: pointer;
 }
 
-.card-btn button:hover{
+.card-btn button:hover {
   border: 1px solid #fff;
   background-color: #000;
   color: #fff;
@@ -259,7 +242,6 @@ p{
 }
 
 @media (max-width: 768px) {
-  
   .container-1 {
     display: flex;
     flex-direction: column;
@@ -276,69 +258,57 @@ p{
     flex-direction: column;
     height: 100vh;
     width: 100vw;
-   
   }
 
   .text-container {
-   display: flex;
-   align-items: center;
-   justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .card-container {
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
-      justify-items: center;
-      align-items: center;
-       grid-column-gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+    align-items: center;
+    grid-column-gap: 10px;
   }
 
   .cards {
     max-width: 90%;
   }
 
-  .container-cadastro{
+  .container-cadastro {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     margin-top: 15px;
-
   }
 
-  header{
+  header {
     display: flex;
     justify-content: center;
     background-color: #f5f5f5;
   }
-  
-  footer p{
-    display: none;
-  
-  }
-  
- 
 
+  footer p {
+    display: none;
+  }
 }
 
 @media ((min-width: 769px) and (max-width: 1200px)) {
-  .card-container{
+  .card-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
     align-items: center;
-   
-    
   }
 
-  footer p{
+  footer p {
     display: none;
-  
   }
-
-
 }
-
 
 @media (max-width: 480px) {
   .text-container p {

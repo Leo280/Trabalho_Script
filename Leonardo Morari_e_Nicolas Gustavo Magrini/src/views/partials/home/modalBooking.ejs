@@ -1,0 +1,25 @@
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeModal">&times;</span>
+    <h2>Formulário de Reserva</h2>
+    <form id="bookingForm" action="/bookings" method="post" onsubmit="validateAndSubmitBooking(event)">
+      <label for="name">Nome:</label>
+      <span class="error-message" id="error-name"></span>
+      <input type="text" id="name" name="name" />
+
+      <label for="cpf">CPF:</label>
+      <span class="error-message" id="error-cpf"></span>
+      <input type="text" id="cpf" name="cpf" maxlength="14" />
+
+      <label for="date">Data da Reserva:</label>
+      <span class="error-message" id="error-date"></span>
+      <input type="date" id="date" name="date" />
+
+      <label for="time">Horário:</label>
+      <span class="error-message" id="error-time"></span>
+      <input type="time" id="time" name="time" />
+
+      <button type="submit" class="btn-enviar">Enviar</button>
+    </form>
+  </div>
+</div>

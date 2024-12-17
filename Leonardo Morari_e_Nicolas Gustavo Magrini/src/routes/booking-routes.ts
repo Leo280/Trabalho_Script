@@ -1,7 +1,6 @@
 import { Router } from 'express';
+import bookingController from '../controllers/booking-controller';
 
 export const bookingRouter = Router();
 
-bookingRouter.get('/', (req, res) => {
-  res.send('Hello Bookings');
-});
+bookingRouter.post('/', bookingController.create);

@@ -23,7 +23,8 @@
       </div>
       <div class="container-form" role="form" aria-labelledby="loginFormTitle">
         <p id="loginFormTitle">
-          <i class="fa-solid fa-martini-glass-citrus fa-xl" style="color: #000"></i> Realize o seu <span>Login</span>
+          <i class="fa-solid fa-martini-glass-citrus fa-xl" style="color: #000"></i>
+          Realize o seu <span>Login</span>
         </p>
         <form
           class="input-group"
@@ -33,25 +34,24 @@
           method="post"
         >
           <div class="input-field">
-            <label for="email">Email</label>
             <input type="email" name="email" id="email" placeholder="Email" required />
-            <p id="emailError" class="error-message"></p>
           </div>
           <div class="input-field">
-            <label for="password">Senha</label>
             <input type="password" id="password" name="password" placeholder="Senha" required />
-            <p id="passwordError" class="error-message"></p>
           </div>
           <button type="submit" class="btn-logar" aria-label="Entrar no sistema">Logar</button>
-          <button class="btn-cadastro" aria-label="Ir para a página de cadastro" onclick="redirectRegister()">
+          <button type="button" class="btn-cadastro" aria-label="Ir para a página de cadastro" onclick="redirectRegister()">
             Cadastre-se
           </button>
         </form>
         <% if (typeof error !== 'undefined') { %>
         <div id="error" class="error-message"><%= error %></div>
         <% } %>
+        <p id="emailError" class="error-message"></p>
+        <p id="passwordError" class="error-message"></p>
       </div>
     </div>
+    <%- include('partials/footer') %>
     <script src="/js/login.js"></script>
   </body>
 </html>
