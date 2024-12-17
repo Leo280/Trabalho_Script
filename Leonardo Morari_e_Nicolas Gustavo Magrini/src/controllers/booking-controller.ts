@@ -10,12 +10,10 @@ class BookingController {
       return res.redirect('/users/login');
     }
 
-    const userId = req.session.id;
+    const userId = req.session.userId!;
     await bookingService.create({ name, cpf, date, time, userId });
 
-    res.render('main', {
-      showSuccessModal: true,
-    });
+    res.redirect('/home');
   }
 }
 
