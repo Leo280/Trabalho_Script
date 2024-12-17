@@ -14,6 +14,7 @@ export class KyselyUserRepository implements UserRepository {
         name,
         email,
         password,
+        role: 'USER',
         createdAt: new Date().toISOString(),
       })
       .execute();
@@ -31,6 +32,7 @@ export class KyselyUserRepository implements UserRepository {
       name: user.name,
       email: user.email,
       password: user.password,
+      role: user.role,
       createdAt: user.createdAt,
     };
 

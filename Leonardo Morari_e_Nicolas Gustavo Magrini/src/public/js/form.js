@@ -1,4 +1,3 @@
-//Abrir o modal ao clicar em fazer reserva
 document.getElementById('openModal').addEventListener('click', () => {
   document.getElementById('modal').style.display = 'block';
 });
@@ -7,15 +6,56 @@ document.getElementById('closeModal').addEventListener('click', () => {
   document.getElementById('modal').style.display = 'none';
 });
 
-window.addEventListener('click', (event) => {
-  const modal = document.getElementById('modal');
-  if (event.target === modal) {
-    modal.style.display = 'none';
-  }
+document.getElementById('closeSuccessModal').addEventListener('click', () => {
+  document.getElementById('successModal').style.display = 'none';
 });
 
+window.addEventListener('click', (event) => {
+  const modal = document.getElementById('modal');
+  const successModal = document.getElementById('successModal');
+  if (event.target === modal) modal.style.display = 'none';
+  if (event.target === successModal) successModal.style.display = 'none';
+});
 
-// Função para validar CPF
+function validateAndSubmitBooking(event) {
+  const name = document.getElementById('name').value.trim();
+  const cpf = document.getElementById('cpf').value.trim();
+  const date = document.getElementById('date').value;
+  const time = document.getElementById('time').value;
+  let isValid = true;
+
+  document.querySelectorAll('.error-message').forEach((el) => (el.textContent = ''));
+
+  if (!name) {
+    document.getElementById('error-name').textContent = 'Informe o nome';
+    isValid = false;
+  }
+
+  if (!isValidCPF(cpf)) {
+    document.getElementById('error-cpf').textContent = 'CPF Inválido';
+    isValid = false;
+  }
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const inputDate = new Date(date + 'T00:00:00');
+
+  if (!date || inputDate < today) {
+    document.getElementById('error-date').textContent = 'A data deve ser a partir de hoje.';
+    isValid = false;
+  }
+
+  if (!time) {
+    document.getElementById('error-time').textContent = 'Por Favor, informe o horário da reserva';
+    isValid = false;
+  }
+
+  if (!isValid) {
+    event.preventDefault();
+  }
+}
+
 function isValidCPF(cpf) {
   cpf = cpf.replace(/[^\d]/g, '');
 
@@ -35,7 +75,6 @@ function isValidCPF(cpf) {
   return parseInt(cpf[10]) === secondVerifier;
 }
 
-// Máscara e validação de CPF
 document.getElementById('cpf').addEventListener('input', (event) => {
   const input = event.target;
   const value = input.value.replace(/\D/g, '');
@@ -55,59 +94,3 @@ document.getElementById('cpf').addEventListener('input', (event) => {
     input.classList.remove('invalid');
   }
 });
-
-// Comportamento do formulário
-document.getElementById('reservationForm').addEventListener('submit', (event) => {
-  event.preventDefault(); // Evita o envio para teste local
-  const form = event.target;
-  const inputs = form.querySelectorAll('input');
-  let isValid = true;
-
-  inputs.forEach((input) => {
-    if (!input.checkValidity()) {
-      isValid = false;
-      input.classList.add('invalid');
-      input.title = input.validationMessage;
-    } else {
-      input.classList.remove('invalid');
-      input.removeAttribute('title');
-    }
-  });
-
-  if (isValid) {
-    document.getElementById('modal').style.display = 'none';
-    document.getElementById('successModal').style.display = 'block';
-  } 
-});
-
-
-// Fechar modal de sucesso
-document.getElementById('closeSuccessModal').addEventListener('click', () => {
-  document.getElementById('successModal').style.display = 'none';
-});
-
-// Fechar modal principal
-document.getElementById('closeModal').addEventListener('click', () => {
-  document.getElementById('modal').style.display = 'none';
-});
-
-// Abrir modal principal
-document.getElementById('openModal').addEventListener('click', () => {
-  document.getElementById('modal').style.display = 'block';
-});
-
-// Fechar modal ao clicar fora do conteúdo
-window.addEventListener('click', (event) => {
-  const modal = document.getElementById('modal');
-  const successModal = document.getElementById('successModal');
-  if (event.target === modal) modal.style.display = 'none';
-  if (event.target === successModal) successModal.style.display = 'none';
-});
-
-//Realiza o Logoff
-function sair() {
-  window.location.href = '../Views/login.html';
-}
-
-
-

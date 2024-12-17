@@ -1,0 +1,27 @@
+<div id="modalCadastrarProduto" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeModalProduto">&times;</span>
+    <h2>Cadastrar Drink</h2>
+    <form
+      id="CadastroProdutoForm"
+      action="/drinks"
+      method="post"
+      enctype="multipart/form-data"
+      onsubmit="validateAndSubmitDrink(event)"
+    >
+      <label for="image">Imagem</label>
+      <span class="error-message" id="error-image-drink"></span>
+      <input class="input-file" type="file" id="imageDrink" name="image" />
+
+      <label for="name">Nome:</label>
+      <span class="error-message" id="error-name-drink"></span>
+      <input class="nome" type="text" id="nameDrink" name="name" />
+
+      <label for="description">Descrição:</label>
+      <span class="error-message" id="error-description-drink"></span>
+      <textarea class="textarea" name="description" id="descriptionDrink"></textarea>
+
+      <button type="submit" class="btn-enviar">Cadastrar</button>
+    </form>
+  </div>
+</div>

@@ -7,7 +7,7 @@ export async function up(db: Kysely<any>) {
     .addColumn('id', 'text', (col) => col.primaryKey())
     .addColumn('name', 'text', (col) => col.notNull())
     .addColumn('description', 'text', (col) => col.notNull())
-    .addColumn('img_path', 'text', (col) => col.notNull())
+    .addColumn('img_name', 'text', (col) => col.notNull())
     .execute();
 }
 

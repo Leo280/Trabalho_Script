@@ -1,0 +1,13 @@
+<% drinks.forEach(drink => { %>
+<div class="cards" data-drink-id="<%= drink.id %>">
+  <div class="cards-header">
+    <img src="/uploads/imgs/<%= drink.imgName %>" alt="<%= drink.name %>" title="<%= drink.name %>" />
+  </div>
+  <div class="cards-body">
+    <p><%= drink.name %></p>
+  </div>
+  <div class="card-btn">
+    <button class="open-modal-btn" data-drink-id="<%= drink.id %>">Ver Descrição</button>
+  </div>
+</div>
+<% }) %>

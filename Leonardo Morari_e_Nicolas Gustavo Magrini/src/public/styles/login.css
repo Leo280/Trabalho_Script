@@ -122,7 +122,6 @@ input:focus {
   border: none;
   cursor: pointer;
   font-size: 15px;
-  text-decoration: underline;
 }
 
 .error-message,
@@ -143,4 +142,16 @@ input:focus {
 
 .error-message.visible {
   visibility: visible;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer p {
+  font-size: 15px;
+  color: #fff;
+  margin-bottom: 20px;
 }

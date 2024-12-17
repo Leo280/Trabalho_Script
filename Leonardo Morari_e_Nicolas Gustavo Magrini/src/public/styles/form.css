@@ -49,19 +49,25 @@ label {
   text-align: left;
 }
 
-input, button {
+input,
+button {
   margin-top: 5px;
   padding: 8px;
   font-size: 14px;
 }
 
-.btn-enviar{
+.btn-enviar {
   background-color: #000;
   border-radius: 24px;
   color: #fff;
   cursor: pointer;
   border: none;
   margin-top: 15px;
-  
 }
 
+.error-message {
+  display: block;
+  color: red;
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
